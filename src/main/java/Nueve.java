@@ -1,6 +1,5 @@
 public class Nueve {
     public static void main(String[] args) {
-        isPalindrome(121);
         System.out.println(isPalindrome(121));
     }
 

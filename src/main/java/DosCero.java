@@ -1,43 +1,25 @@
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class DosCero {
     public static void main(String[] args) {
-        System.out.println(isValid("(){}[]"));
+        System.out.println(isValid("{[]}"));
 
     }
 
-    public static boolean isValid(String input) {
-        boolean ret = false;
-
-        char[] c = input.toCharArray();
-        for (int i = 0; i < input.length(); i++) {
-            switch (c[i]){
-                case '(':
-                    if(c[i+1] == ')'){
-                        ret = true;
-                    }else
-                        return false;
-                case ')':
-                    break;
-
-                case '{':
-                    if(c[i+1] == '}'){
-                        ret = true;
-                    }else
-                        return false;
-                case '}':
-                    break;
-
-                case '[':
-                    if(c[i+1] == ']'){
-                        ret = true;
-                    }else
-                        return false;
-                case ']':
-                    break;
-            }
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        for (char c : s.toCharArray()) {
+            if (c == '(')
+                stack.push(')');
+            else if (c == '{')
+                stack.push('}');
+            else if (c == '[')
+                stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != c)
+                return false;
         }
-        return ret;
+        return stack.isEmpty();
     }
 }
 

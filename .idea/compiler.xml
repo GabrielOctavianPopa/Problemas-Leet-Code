@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LeeTCode problemas" />
         <module name="Problemas de LeeTCode" />
+        <module name="LTCDiezOchoTresDos" />
       </profile>
     </annotationProcessing>
   </component>
